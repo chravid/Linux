@@ -1,0 +1,275 @@
+Moving Around 
+
+ 
+
+cd                    move to the another directory  
+
+cd ..                   move back from the previous directory 
+
+pwd                   print working directory it shows the current directory that you're in 
+
+ 
+
+ls -lrt                  it lists all the folders and files in a directory (search result with l=configuration file D=directory) 
+
+                                              (owner) (group)                 
+
+                       drwxr-xr-x  2 chravid wireshark 4096 Jul 20 19:54 Desktopd wireshark 4096 Jul 20 19:54 Desktop 
+
+xdg-open       Open a folder or file  
+
+_________________________________________________________________________________________________________ 
+
+ 
+
+Identification 
+
+ 
+
+whoami                 checks current login 
+
+_________________________________________________________________________________________________________ 
+
+Searching files and directories 
+
+ 
+
+locate  -b                                                                         finds every file and directory with the search keyword (database updated only once a day) 
+
+whereis                                                                           finds binaries and man page 
+
+which                                                                               finds single binary file in the directories /usr/sbin 
+
+find / -type f  -name apache2                                      finds a specific file (most powerful among search utilities) 
+
+      
+
+ POSIX specifies                                                         
+
+f: a regular file 
+
+d: directory 
+
+l: symbolic link 
+
+c: character devices 
+
+b: block devices 
+
+p: named pipe (FIFO) 
+
+s: socket 
+
+ 
+
+find / -type f  -name apache2.*                                      finds files with extension   ps aux | grep keyword           
+
+find /var/log/nginx -type f -not -name '*.log.gz'         To find all files that don’t match the regex *.log.gz you can use the -not option.  
+
+                                                                                              For example, to find all files that don’t end in *.log.gz you would use: 
+
+find /etc/dovecot/conf.d -name "*.conf" -mtime 5    find .conf and has been modified in the last five days 
+
+find /home -mtime +30 -daystart                                   directory that were modified 30 or more days ago: 
+
+find / -user linuxize                                                            to search for all files and directories owned by the user linuxize 
+
+__________________________________________________________________________________________________________ 
+
+ps aux | grep keyword                       grep filters to search for keywords 
+
+Concatenation 
+
+ 
+
+cat > hackingskills                                create a text file and insert your message (to save and exit press ctrl + d) 
+
+hacking Is cool 
+
+ 
+
+cat >> hackingskills                             adds more text file inside the text file "hackingskills" 
+
+Yes it is 
+
+ 
+
+cat hackingskills                                   shows the content inside a text file 
+
+ 
+
+__________________________________________________________________________________________________________ 
+
+Create a directory                                 
+
+ 
+
+mkdir folder                                          creates a directory 
+
+ 
+
+__________________________________________________________________________________________________________ 
+
+Rename a file or directory 
+
+ 
+
+mv file newfile                                     this command will rename file to newfile 
+
+__________________________________________________________________________________________________________ 
+
+Remove files and directories 
+
+ 
+
+rm -fr                                          remove a directory,  the subdirectory and files (you can delete a folder with files inside) 
+
+rmdir                                          remove an empty directory (works only with empty directory) 
+
+__________________________________________________________________________________________________________ 
+
+View Beginning of the File 
+
+ 
+
+head filename                           This command will view the first 10 lines of a text file 
+
+head -20 filename                     This command will view the first 20 lines of a text file 
+
+tail filename                               This command will view the last 10 lines of a text file 
+
+tail -20 filename                        This command will view the first 20 lines of a text file 
+
+ 
+
+__________________________________________________________________________________________________________ 
+
+Numbered list 
+
+ 
+
+nl hackingskills                                              show text content in numbered list 
+
+tail -n+22 hackingskills | head -n 6           show  6 lines above number 22  
+
+ 
+
+__________________________________________________________________________________________________________ 
+
+Display Control 
+
+ 
+
+more textfile                                              it shows the text and lets you  page down through using enter 
+
+less                                                               this command has the same functionality with more but you can scroll down and up 
+
+ 
+
+__________________________________________________________________________________________________________________ 
+
+Network Management 
+
+ 
+
+ifconfig                                                                                                                                          shows active network interface details 
+
+ifconfig eth0 down                                   
+
+ifconfig eth0 up 
+
+ifconfig eth0 192.168.181.115 netmask 255.255.0.0 broadcast 192.168.1.255              set ipaddress, netmask and broadcast address 
+
+iwconfig                                                                                                                                         shows the wireless network interface details 
+
+ 
+
+ifconfig eth0 down                                                                                                    change mac address can be used for MAC spoofing or NAC Bypass 
+
+ifconfig eth0 hw ether 00:11:22:33:44:55 
+
+ifconfig eth0 up 
+
+ 
+
+dhclient eth0                                                                                                                               Request  IP address from DHCP server 
+
+dig  weburl   ns                                                                                                                            Shows Domain Name Server information 
+
+dig  weburl  mx                                                                                                                            Show domain mail exchange server _______________________________________________________________________________________________________________ 
+
+Directories 
+
+ 
+
+etc/resolv.conf                                                                                                                                             DNS configuration 
+
+etc/hosts                                                                                                                             IP address--domain name mapping (useful for TCP hijacking) 
+
+etc/apt/sources.list                                                                                                                      Repository source list (for adding repositories) 
+
+etc/sudoers                                                                                                                                   Add user if the error user is not a sudoer appears 
+
+__________________________________________________________________________________________________________________ 
+
+Software Installation/Uninstallation 
+
+ 
+
+apt-cache search snort                                                                Check the package from the repository before downloading the software package 
+
+apt-get install snort                                                                                       Install a software from your Operating system default repository  
+
+apt-get remove snort                                                                         Uninstall a software and package but doesn’t remove a configuration file 
+
+apt-get purge snort                                                     Uninstall a software but it will not remove the configuration files and the software package 
+
+apt-get update                                                                                                                        Software repositories update 
+
+apt-get upgrade                                                                                       upgrade is used to install the newest versions of all packages 
+
+__________________________________________________________________________________________________________________ 
+
+Cloning Github Repositories 
+
+ 
+
+git clone URL                                                                                                                  copies all the data and files from github 
+
+ 
+
+__________________________________________________________________________________________________________________ 
+
+Granting Ownership 
+
+ 
+
+chown username filename                                                          changes the owner of a file (owners have  have the ability to control permissions) 
+
+chgrp  groupname filename                                                                                   changes the groups who can access a file  
+
+ 
+
+chmod 777 file                                                                                  changes the permission to access the file (7 =  (1)read, (2)write,(4)execute 
+
+                                                                                                                           3 numbers  denotes owner, group, all other users                 
+
+__________________________________________________________________________________________________________________ 
+
+User Account Management 
+
+ 
+
+passwd -                                                                                                                         Change root password 
+
+passwd username                                                                                                         Change user password 
+
+ 
+
+__________________________________________________________________________________________________________________ 
+
+ 
+
+ 
+
+ 
