@@ -1,4 +1,4 @@
-Moving Around 
+MOVING ARROUND
 
  
 
@@ -16,7 +16,7 @@ ls -lrt                  it lists all the folders and files in a directory (sear
 
                        drwxr-xr-x  2 chravid wireshark 4096 Jul 20 19:54 Desktopd wireshark 4096 Jul 20 19:54 Desktop 
 
-xdg-open       Open a folder or file  
+xdg-open               Open a folder or file  
 
 _________________________________________________________________________________________________________ 
 
