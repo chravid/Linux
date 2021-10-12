@@ -18,19 +18,19 @@ ls -lrt                  it lists all the folders and files in a directory (sear
 
 xdg-open               Open a folder or file  
 
-_________________________________________________________________________________________________________ 
+
 
  
 
-Identification 
+IDENTIFICATION
 
  
 
 whoami                 checks current login 
 
-_________________________________________________________________________________________________________ 
 
-Searching files and directories 
+
+SEARCHING FILES AND DIRECTORIES
 
  
 
@@ -196,7 +196,7 @@ dhclient eth0                                                                   
 
 dig  weburl   ns                                                                                                                            Shows Domain Name Server information 
 
-dig  weburl  mx                                                                                                                            Show domain mail exchange server _______________________________________________________________________________________________________________ 
+dig  weburl  mx                                                                                                                            Show domain mail exchange server 
 
 Directories 
 
@@ -268,8 +268,29 @@ passwd username                                                                 
 
 __________________________________________________________________________________________________________________ 
 
- 
+ DISK MANAGEMENT
+
+fdisk -l							Shows all the drives
+df -h								Checks the mount point of the target drive
+mount /dev/sda6 /media/chravid/windows_files                    mounts th drive
+umount /dev/sda6
 
  
 
  
+MIC NOT WORKING ON UBUNTU
+1. check the model of your mic on https://www.kernel.org/doc/html/latest/sound/hd-audio/models.html
+2. copy paste this with the model of MIC  options snd-hda-intel model=yourmicmodel
+3. paste on /etc/modprobe.d/alsa-base.conf
+4. reboot the machine and plug your mic select headset
+
+
+
+
+UBUNTU WIFI TURNING OFF WHEN USING HOTSPOT
+1. alt+f2 enter nm-connection-editor
+2. click + sign then select wifi on connection type
+3. select hotspot on mode then enter SSID
+4. go to wi-fi security and select wpa & wpa2 personal then type your password
+5. click create
+6. connect your wifi adapter and hotspot will connect automatically
