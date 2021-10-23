@@ -283,7 +283,10 @@ MIC NOT WORKING ON UBUNTU
 2. copy paste this with the model of MIC  options snd-hda-intel model=yourmicmodel
 3. paste on /etc/modprobe.d/alsa-base.conf
 4. reboot the machine and plug your mic select headset
-
+Sound settings
+*Input Device = Internal Microphone-Built-in Audio
+*volume level = 1/8
+*Boya = Off/Smartphone
 
 
 
@@ -294,3 +297,5 @@ UBUNTU WIFI TURNING OFF WHEN USING HOTSPOT
 4. go to wi-fi security and select wpa & wpa2 personal then type your password
 5. click create
 6. connect your wifi adapter and hotspot will connect automatically
+7. (note. if hotspot is not showing disconnect the network adapter or the built in network card connected to the wifi
+   
